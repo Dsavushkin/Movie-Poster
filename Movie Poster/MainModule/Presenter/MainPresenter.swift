@@ -9,7 +9,7 @@ import UIKit
 
 class MainPresenter: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    let movies = Movie(title: "Tile", description: "Description", poster: "Poster")
+//    let movies = Movie(title: "Tile", description: "Description", poster: "Poster")
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -24,7 +24,7 @@ class MainPresenter: UIViewController, UICollectionViewDelegate, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let item = collectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionViewCell.identifier, for: indexPath) as? MainCollectionViewCell
-        item?.setUpCell(movies)
+//        item?.setUpCell(movies)
         return item!
     }
     
