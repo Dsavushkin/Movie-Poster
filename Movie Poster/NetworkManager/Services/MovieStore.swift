@@ -20,15 +20,31 @@ class MovieStore: MovieServiceProtocol {
     
     
     func fetchMovies(completion: @escaping (Result<MovieResponse, MovieError>) -> ()) {
-        
+        guard let url = URL(string: "\(baseUrl)/movie") else {
+            completion(.failure(.invalidResponse) )
+            return
+        }
+        self.loadURLAndDecode(url: url, completion: completion)
     }
     
     func fetchMovie(id: Int, completion: @escaping (Result<Movie, MovieError>) -> ()) {
-        
+        guard let url = URL(string: "\(baseUrl)/movie/\(id)") else {
+            completion(.failure(.invalidResponse) )
+            return
+        }
+        self.loadURLAndDecode(url: url, completion: completion)
     }
     
     func searchMovie(query: String, completion: @escaping (Result<MovieResponse, MovieError>) -> ()) {
-        
+        guard let url = URL(string: "\(baseUrl)/search/movie") else {
+            completion(.failure(.invalidResponse) )
+            return
+        }
+        self.loadURLAndDecode(url: url, params: [
+            "language" : "ru-Ru",
+            "include_adult" : "false",
+            "query" : query
+        ], completion: completion)
     }
     
     private func loadURLAndDecode<D: Decodable>(url: URL, params: [String: String]? = nil, completion: @escaping (Result<D, MovieError>) -> ()){
