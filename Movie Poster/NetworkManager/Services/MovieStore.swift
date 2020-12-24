@@ -13,14 +13,14 @@ class MovieStore: MovieServiceProtocol {
     static let shared = MovieStore()
     private init() {}
     
-    private let apiKey = ""
-    private let baseUrl = ""
+    private let apiKey = "d0bda2a0c77bb3b5dfe5f6aece47d20d"
+    private let baseUrl = "https://api.themoviedb.org/3"
     private let urlSession = URLSession.shared
     private let jsonDecoder = Utils.jsonDecoder
     
     
     func fetchMovies(completion: @escaping (Result<MovieResponse, MovieError>) -> ()) {
-        guard let url = URL(string: "\(baseUrl)/movie") else {
+        guard let url = URL(string: "\(baseUrl)/movie/now_playing") else {
             completion(.failure(.invalidResponse) )
             return
         }
@@ -41,7 +41,7 @@ class MovieStore: MovieServiceProtocol {
             return
         }
         self.loadURLAndDecode(url: url, params: [
-            "language" : "ru-Ru",
+            "language" : "ru",
             "include_adult" : "false",
             "query" : query
         ], completion: completion)
