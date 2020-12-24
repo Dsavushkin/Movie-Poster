@@ -13,6 +13,8 @@
 		684EE6932593FC73006573BE /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684EE6922593FC73006573BE /* ImageLoader.swift */; };
 		684EE69725940839006573BE /* Movie+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684EE69625940839006573BE /* Movie+Stub.swift */; };
 		684EE6A425940F77006573BE /* MovieListState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684EE6A325940F77006573BE /* MovieListState.swift */; };
+		684EE6BF25955A9D006573BE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684EE6BE25955A9D006573BE /* User.swift */; };
+		684EE6C225955CCA006573BE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684EE6C125955CCA006573BE /* NetworkManager.swift */; };
 		68947E102592A0EC00BD9D31 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68947E0F2592A0EC00BD9D31 /* MovieModel.swift */; };
 		68947E152592A17900BD9D31 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68947E132592A17900BD9D31 /* MainCollectionViewCell.swift */; };
 		68947E162592A17900BD9D31 /* MainCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68947E142592A17900BD9D31 /* MainCollectionViewCell.xib */; };
@@ -33,6 +35,8 @@
 		684EE69625940839006573BE /* Movie+Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+Stub.swift"; sourceTree = "<group>"; };
 		684EE6A125940A99006573BE /* movie_list.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = movie_list.json; sourceTree = "<group>"; };
 		684EE6A325940F77006573BE /* MovieListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListState.swift; sourceTree = "<group>"; };
+		684EE6BE25955A9D006573BE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		684EE6C125955CCA006573BE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		68947E0F2592A0EC00BD9D31 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		68947E132592A17900BD9D31 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		68947E142592A17900BD9D31 /* MainCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -69,6 +73,7 @@
 		684EE67E25936752006573BE /* NetworkManager */ = {
 			isa = PBXGroup;
 			children = (
+				684EE6C125955CCA006573BE /* NetworkManager.swift */,
 				684EE67F25936795006573BE /* Services */,
 			);
 			path = NetworkManager;
@@ -122,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				68947E0F2592A0EC00BD9D31 /* MovieModel.swift */,
+				684EE6BE25955A9D006573BE /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -250,6 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				684EE6BF25955A9D006573BE /* User.swift in Sources */,
 				684EE68425936FC5006573BE /* MovieStore.swift in Sources */,
 				68D21E4D259008C20057A538 /* MainPresenter.swift in Sources */,
 				684EE6932593FC73006573BE /* ImageLoader.swift in Sources */,
@@ -259,6 +266,7 @@
 				68D21E53259008C20057A538 /* Movie_Poster.xcdatamodeld in Sources */,
 				68947E102592A0EC00BD9D31 /* MovieModel.swift in Sources */,
 				684EE6A425940F77006573BE /* MovieListState.swift in Sources */,
+				684EE6C225955CCA006573BE /* NetworkManager.swift in Sources */,
 				68D21E49259008C20057A538 /* AppDelegate.swift in Sources */,
 				68D21E4B259008C20057A538 /* SceneDelegate.swift in Sources */,
 				684EE681259367B1006573BE /* MoviesServices.swift in Sources */,
@@ -411,6 +419,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 43SN73XHLW;
 				INFOPLIST_FILE = "Movie Poster/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -418,7 +427,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "DmitriySavushkin.Movie-Poster";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -430,6 +439,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 43SN73XHLW;
 				INFOPLIST_FILE = "Movie Poster/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -437,7 +447,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "DmitriySavushkin.Movie-Poster";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
