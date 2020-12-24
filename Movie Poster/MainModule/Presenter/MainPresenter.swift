@@ -46,7 +46,7 @@ class MainPresenter: UIViewController, UICollectionViewDelegate, UICollectionVie
         let item = collectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionViewCell.identifier, for: indexPath) as? MainCollectionViewCell
         item?.setUpCell((movies?[indexPath.item])!)
 //        item?.movieNameLabel.text = "123"
-        item?.backgroundColor = .red
+//        item?.backgroundColor = .red
         return item!
     }
     

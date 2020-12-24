@@ -10,11 +10,12 @@ import UIKit
 class MainCollectionViewCell: UICollectionViewCell {
 
     static let identifier = "MainCollectionViewCell"
-    private var imageLoader = ImageLoader()
+    var imageLoader = ImageLoader()
     
     @IBOutlet weak var posterImage: UIImageView!
     @IBOutlet weak var movieNameLabel: UILabel!
-//    override init(frame: CGRect) {
+    @IBOutlet weak var ratingLabel: UILabel!
+    //    override init(frame: CGRect) {
 //        super.init(frame: frame)
 //        contentView.backgroundColor = .red
 //    }
@@ -30,7 +31,9 @@ class MainCollectionViewCell: UICollectionViewCell {
     
     func setUpCell(_ movie: Movie){
         movieNameLabel.text = movie.title
+        imageLoader.loadImage(with: movie.backdropUrl)
         posterImage.image =  self.imageLoader.image
+        ratingLabel.text = "Rating \(movie.voteAverage)"
     }
 
 }
